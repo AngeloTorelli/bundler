@@ -12,6 +12,7 @@ update &&= update =~ /--bundler(?:=(.+))?/ && $1 || "> 0.a"
 ENV["BUNDLER_VERSION"] = update if update
 require "bundler/postit_trampoline"
 
+require "bundler/compatibility_guard"
 require "bundler"
 # Check if an older version of bundler is installed
 $LOAD_PATH.each do |path|
